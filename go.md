@@ -71,20 +71,20 @@ func main() {
 Using an already existing variable: (I did not find a better way, scoping seems to be strange)
 
 ```go
-	i := 0
-	for i := i; i <= 3; i++ {
-		fmt.Println(i)
-	}
+i := 0
+for i := i; i <= 3; i++ {
+	fmt.Println(i)
+}
 ```
 
 ## Conditionals
 
 ```go
 if true == true {
-		fmt.Print("Fucking true")
-	} else {
-		fmt.Print("Not.")
-	}
+	fmt.Print("Fucking true")
+} else {
+	fmt.Print("Not.")
+}
 ```
 
 You can declare variables even within the if-syntax:
@@ -111,10 +111,10 @@ Println() does a linebreak after printing, Printf() does not.
 Printf() is for formatting strings.
 
 ```go
-	a := 5
-	b := 10
-	fmt.Println(a, "Numbers", b) // '5 Numbers 10'
-   fmt.Printf(a, "Numbers", b)  // error - variables are not a string
+a := 5
+b := 10
+fmt.Println(a, "Numbers", b) // '5 Numbers 10'
+fmt.Printf(a, "Numbers", b)  // error - variables are not a string
 ```
 
 ## Arrays
