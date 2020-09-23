@@ -59,7 +59,7 @@ It is not needed to provide the datatype when declaring.
 with const constant variables can be declared. It works the same way as var.
 
 ## For Loops
-
+For-Loops are the only loops which can be used in Go. 
 ```go
 func main() {
 	for i := 0; i <= 3; i++ {
@@ -97,7 +97,7 @@ if age := 9; age < 18 {
 
 When using this way to quickly declare a variable, the variable is not available outside of the if-statement.
 
-## The fmt package
+## fmt package
 
 fmt is a default package, used for IO.
 
