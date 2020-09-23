@@ -34,7 +34,7 @@ This works inside of functions
 ```go
 func main() {
    name := "Max"
-	fmt.Println(name)
+   fmt.Println(name)
 }
 ```
 
@@ -91,7 +91,7 @@ You can declare variables even within the if-syntax:
 
 ```go
 if age := 9; age < 18 {
-	fmt.Print("Not grown up")
+   fmt.Print("Not grown up")
 }
 ```
 
