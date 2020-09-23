@@ -62,9 +62,9 @@ with const constant variables can be declared. It works the same way as var.
 For-Loops are the only loops which can be used in Go. 
 ```go
 func main() {
-	for i := 0; i <= 3; i++ {
-		fmt.Println(i) // 0, 1, 2, 3
-	}
+  for i := 0; i <= 3; i++ {
+    fmt.Println(i) // 0, 1, 2, 3
+  }
 }
 ```
 
@@ -73,7 +73,7 @@ Using an already existing variable: (I did not find a better way, scoping seems 
 ```go
 i := 0
 for i := i; i <= 3; i++ {
-	fmt.Println(i)
+   fmt.Println(i)
 }
 ```
 
@@ -81,9 +81,9 @@ for i := i; i <= 3; i++ {
 
 ```go
 if true == true {
-	fmt.Print("Fucking true")
+   fmt.Print("Fucking true")
 } else {
-	fmt.Print("Not.")
+   fmt.Print("Not.")
 }
 ```
 
@@ -121,9 +121,9 @@ fmt.Printf(a, "Numbers", b)  // error - variables are not a string
 
 ```go
 func main() {
-	// creates an empty array with 5 elements of the type string
-	var names [3]string
-	fmt.Println(names) // [  ]
+   // creates an empty array with 5 elements of the type string
+   var names [3]string
+   fmt.Println(names) // [  ]
 }
 ```
 
