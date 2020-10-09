@@ -172,3 +172,73 @@ func main() {
    time.Sleep(time.Second * 2)
 }
 ```
+
+### Wait Groups
+
+A wait group is the count of go routines, that should be executed in the code. They help us to manage all the ones running, and can be used to avoid the programming breaking before it should stop.
+Here is a good example:
+
+```go
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+func main() {
+   var wg sync.WaitGroup
+   wg.Add(1)
+
+   go func() {
+      countFish("Fish")
+
+      wg.Done()
+   }()
+
+   go func() {
+      countSheep("Sheep")
+   }()
+
+   wg.Wait()
+}
+
+
+func countFish(thing string) {
+   for i := 1; i <= 5; i++ {
+      fmt.Println(i, thing)
+      time.Sleep(time.Millisecond * 500)
+	}
+}
+
+func countSheep(thing string) {
+   for i := 1; i <= 10; i++ {
+      fmt.Println(i, thing)
+      time.Sleep(time.Millisecond * 500)
+   }
+}
+```
+
+countFish is only executed 5 times. Since both function executions are go-routines, but we said that there is only one routine in the code, the wg.done() will decrease the waiting-counter. Therefore, after countFish is done, the main-functions ends, the programm is done - but Sheep is only printed 6 times till then, even though, we want to run it till i <= 10.
+
+To avoid this, we can must count countSheep as a routine in the waiting ones too:
+
+```go
+func main() {
+   var wg sync.WaitGroup
+   wg.Add(2)
+
+   go func() {
+      countFish("Fish")
+      wg.Done()
+   }()
+
+   go func() {
+      countSheep("Sheep")
+      wg.Done()
+   }()
+
+   wg.Wait()
+}
+```
+
+Now, when countFish is done, the couter still has 1 as value, so waits until countSheep is done too.
