@@ -139,14 +139,14 @@ Code will print sheep forever, because Go is blocking.
 ```go
 
 func main() {
-	count("sheep")
-	count("fish")
+   count("sheep")
+   count("fish")
 }
 
 func count(thing string) {
-	for i := 1; true; i++ {
-		fmt.Println(i, thing)
-	}
+   for i := 1; true; i++ {
+      fmt.Println(i, thing)
+   }
 }
 ```
 
@@ -155,8 +155,8 @@ Now both will be executed, sheep, fish, sheep and so on.
 
 ```go
 func main() {
-	go count("sheep")
-	count("fish")
+   go count("sheep")
+   count("fish")
 }
 ```
 
@@ -167,8 +167,8 @@ We can avoid this by setting a Sleep or wait for userinput. Such code will block
 
 ```go
 func main() {
-	go count("sheep")
-	go count("fish")
-	time.Sleep(time.Second * 2)
+   go count("sheep")
+   go count("fish")
+   time.Sleep(time.Second * 2)
 }
 ```
