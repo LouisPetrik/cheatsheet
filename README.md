@@ -6,5 +6,5 @@
 -  [Variables](https://github.com/LouisPetrik/cheatsheet/blob/master/go.md#variables)
 -  [For-Loop](https://github.com/LouisPetrik/cheatsheet/blob/master/go.md#for-loops)
 -  [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/go.md#conditionals)
--  [Concurrency](https://github.com/LouisPetrik/cheatsheet/blog/master/go.md#concurrency)
+-  [Concurrency](https://github.com/LouisPetrik/cheatsheet/blob/master/go.md#concurrency)
 -  Webserver
