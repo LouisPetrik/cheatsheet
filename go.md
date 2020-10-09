@@ -14,7 +14,6 @@ import "fmt"
 func main() {
   fmt.Println("Hello World!")
 }
-
 ```
 
 #### executing it
@@ -59,7 +58,9 @@ It is not needed to provide the datatype when declaring.
 with const constant variables can be declared. It works the same way as var.
 
 ## For Loops
-For-Loops are the only loops which can be used in Go. 
+
+For-Loops are the only loops which can be used in Go.
+
 ```go
 func main() {
   for i := 0; i <= 3; i++ {
@@ -129,3 +130,45 @@ func main() {
 
 Whitespaces when printing the empty array will indicate the number of elements, the array is made for.
 No joke.
+
+## Concurrency
+
+In this example, there will never be "fish" printed.
+Code will print sheep forever, because Go is blocking.
+
+```go
+
+func main() {
+	count("sheep")
+	count("fish")
+}
+
+func count(thing string) {
+	for i := 1; true; i++ {
+		fmt.Println(i, thing)
+	}
+}
+```
+
+We can create a go-routine, making the function execute at the same time with the go-keyword.
+Now both will be executed, sheep, fish, sheep and so on.
+
+```go
+func main() {
+	go count("sheep")
+	count("fish")
+}
+```
+
+When we make both functions a go-routine, the programm will finish instantly. Why? Because the go-routine takes the function into the background, and then continues to execute the code below.
+When the second count() function also is a go routine, the main function is done.
+
+We can avoid this by setting a Sleep or wait for userinput. Such code will block the further execution. In this example, sheep and fish will be printed for 2 seconds, then the code stops.
+
+```go
+func main() {
+	go count("sheep")
+	go count("fish")
+	time.Sleep(time.Second * 2)
+}
+```
