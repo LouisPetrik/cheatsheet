@@ -24,7 +24,16 @@ go build app.go
 ./app.go
 ```
 
+## What are packages?
+
+A package is a collection of code. Package = Project = Workspace.
+One app means, only one package name.
+The package name "main" is used to make executables. When using everything else as a name, the compiler would not spit out an executable file. Everything else are so-called reusables.
+Every file with package main, must have a main-function.
+
 ## Variables
+
+Go is statically typed. That means, once we chose a datatype, we must keep the value aligned to it.
 
 ### short declaring
 
@@ -56,6 +65,18 @@ It is not needed to provide the datatype when declaring.
 ### const keyword for declaring
 
 with const constant variables can be declared. It works the same way as var.
+
+To sum up, we can keep in mind, that datatype but also the variable type are optional. Go uses inference to pick the right types.
+
+```go
+var name string = "Max"
+// just the same in short:
+name := "Max"
+```
+
+Keep in mind, that "=" is only used for reassining.
+
+## Functions
 
 ## For Loops
 
@@ -100,11 +121,12 @@ When using this way to quickly declare a variable, the variable is not available
 
 ## fmt package
 
-fmt is a default package, used for IO.
+fmt is a default package, used for IO. It stands for "format".
 
 ```go
 fmt.Println()
 fmt.Printf()
+fmt.Print()
 ```
 
 Both functions from this package can be used to print something on the console.
