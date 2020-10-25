@@ -241,6 +241,14 @@ func main() {
 }
 ```
 
+we can also do it like this:
+
+```go
+for i := range cards {
+   fmt.Println(cards[i])
+}
+```
+
 ## Concurrency
 
 In this example, there will never be "fish" printed.
