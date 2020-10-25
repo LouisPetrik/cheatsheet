@@ -205,6 +205,20 @@ func main() {
 Whitespaces when printing the empty array will indicate the number of elements, the array is made for.
 No joke.
 
+## Slices
+
+Arrays have a fixed length of elements, a slice can grow and shrink. They can only hold data of the same type.
+
+This is how we can create a slice, holding data of the type string:
+
+```go
+func main() {
+   cards := []string{"First", "Second"}
+   fmt.Println(cards)    // [First Second]
+   fmt.Println(cards[0]) // First
+}
+```
+
 ## Concurrency
 
 In this example, there will never be "fish" printed.
