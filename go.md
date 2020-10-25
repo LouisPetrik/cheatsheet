@@ -219,6 +219,28 @@ func main() {
 }
 ```
 
+Let's add something to the slice:
+
+```go
+cards := []string{"First", "Second"}
+cards = append(cards, "Third")
+```
+
+The append-function does not modify the existing slice - it returns a new one.
+
+Looping through that slice with the for-loop:
+
+```go
+func main() {
+   cards := []string{newCard(), newCard()}
+   cards = append(cards, "Six of spades")
+
+   for i, card := range cards {
+      fmt.Println(i, card)
+   }
+}
+```
+
 ## Concurrency
 
 In this example, there will never be "fish" printed.
