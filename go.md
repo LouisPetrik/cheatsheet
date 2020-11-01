@@ -264,6 +264,14 @@ type people []string
 students := people{"Max", "Anna"}
 ```
 
+### Receiver Functions
+
+We can combine custom types with so called receiver functions. Their syntax is a little bit weird.
+
+```go
+
+```
+
 ## Concurrency
 
 In this example, there will never be "fish" printed.
