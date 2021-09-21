@@ -4,10 +4,12 @@
 ## Overview 
 
 - ### [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#functions)
-- ### [Using the console](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#using-the-console)
+- ### [Using the console](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#using-the-console-1)
 - ### [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records)
 - ### [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals-1)
-  
+- ### [Impure functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#impure-functions)
+
+
 ## Functions
 
 ### Writing a function with a return
@@ -167,3 +169,17 @@ test condition =
 main = log (test(1 > 2))
 ```
 The output: "false" 
+
+### Impure functions 
+By definition, pure functions do not change anything outside of their scope. Logging something in the 
+console therefore is an impure function. 
+Of course we can log something from a function, instead of returning a value. 
+This is the case of an impure function: 
+
+```haskell
+logSomething :: String -> Effect Unit 
+logSomething message = log ("My message: " <> message)
+
+
+main = logSomething "Hello"
+```
