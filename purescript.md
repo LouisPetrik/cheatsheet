@@ -8,6 +8,7 @@
 - ### [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records)
 - ### [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals-1)
 - ### [Impure functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#impure-functions-1)
+- ### [Map, Reduce and Filter](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#map-reduce-and-filter)
 
 
 ## The REPL 
