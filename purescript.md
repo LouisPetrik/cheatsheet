@@ -10,6 +10,21 @@
 - ### [Impure functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#impure-functions-1)
 
 
+## The REPL 
+
+You can start the REPL with "spago repl". 
+
+You can import any module from the src-directory with: "import Module"
+For example, "import Main". 
+
+From now on, you can access data written in the file in the REPL. 
+Whenever you change something in the file, make sure to reload the REPL: 
+":reload". 
+
+To quit: ":quit".
+
+Getting the type of some data: ":type <data>"
+
 ## Functions
 
 ### Writing a function with a return
@@ -182,4 +197,19 @@ logSomething message = log ("My message: " <> message)
 
 
 main = logSomething "Hello"
+```
+
+## Arrays 
+
+
+## Importing modules 
+
+When checking in the REPL (spago repl) whether a function is defined, you might find out, it isn't. 
+For example, run ":type last" in the REPL - by default, an error occurs. 
+The function needs to be imported first: 
+
+```haskell
+import Data.Array (last)
+--- Or, to import all functions from the package: 
+import Data.Array
 ```
