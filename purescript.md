@@ -17,7 +17,11 @@ double a = a * 2
 ```
 This is optional, yet, a best practise. 
 
-#### code - app.go
+### Writing a function with more than one parameter: 
+
+```haskell 
+add :: Int -> Int -> Int 
+add a b = a + b 
 
 ## Using the console 
 To log something in the console, make sure to import the proper package. 
@@ -55,6 +59,9 @@ double x = x * 2
 
 main = log (show (double 2))
 ```
+This will get "4" logged. Surprise! 
+Please notice the additional braces around the function-call. 
+Optionally, store the function call in a variable before logging. 
 
 ```
 
