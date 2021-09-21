@@ -1,5 +1,13 @@
 # PureScript
 
+
+## Overview 
+
+- [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#functions)
+- [Using the console](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#using-the-console)
+- [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records)
+- [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals)
+  
 ## Functions
 
 ### Writing a function with a return
@@ -94,7 +102,7 @@ main = log (printDoubleNumber 2)
 In the console: 
 "The Result: 4" 
 
-## Records, aka. Objects 
+## Records
 Records are basically like Objects in JS. Yet, immutable, of course. 
 As with functions, we can and should describe their structure and types before
 initialising them: 
@@ -129,9 +137,33 @@ We can also create a function to access the name-property of a Person-type varia
 getName :: Person -> String 
 getName person = person.name 
 
-main = log (show (getName max))
+main = log (getName max)
 ```
 
 
+## Conditionals 
+
+```haskell
+biggerThan10 :: Int -> String 
+biggerThan10 num = 
+  if num > 10 
+  then "Number is > 10"
+  else "Number is NOT > 10"
 
 
+main = log (biggerThan10(2))
+```
+The output: "Number is NOT > 10". 
+
+You can also pass a condition itself as a parameter, using the type Boolean: 
+
+```haskell 
+test :: Boolean -> String
+test condition =
+  if condition
+  then "true"
+  else "false"
+
+main = log (test(1 > 2))
+```
+The output: "false" 
