@@ -3,10 +3,10 @@
 
 ## Overview 
 
-- [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#functions)
-- [Using the console](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#using-the-console)
-- [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records)
-- [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals)
+- ### [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#functions)
+- ### [Using the console](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#using-the-console)
+- ### [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records)
+- ### [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals)
   
 ## Functions
 
