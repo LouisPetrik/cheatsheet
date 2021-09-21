@@ -7,7 +7,7 @@
 - ### [Using the console](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#using-the-console-1)
 - ### [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records)
 - ### [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals-1)
-- ### [Impure functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#impure-functions)
+- ### [Impure functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#impure-functions-1)
 
 
 ## Functions
