@@ -170,7 +170,7 @@ main = log (test(1 > 2))
 ```
 The output: "false" 
 
-### Impure functions 
+## Impure functions 
 By definition, pure functions do not change anything outside of their scope. Logging something in the 
 console therefore is an impure function. 
 Of course we can log something from a function, instead of returning a value. 
