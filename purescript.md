@@ -228,6 +228,15 @@ map (\n -> n + 1) [1, 2, 3]
 
 Returns "[2, 4, 6]"
 
+We can also use a function to be passed into the Map, applied to each element: 
+
+```haskell
+addOne :: Int -> Int 
+addOne x = x + 1 
+
+newArr = map addOne [1, 2, 3] 
+```
+
 ## Arrays 
 
 
