@@ -18,3 +18,16 @@ double a = a * 2
 This is optional, yet, a best practise. 
 
 #### code - app.go
+
+## Using the console 
+To log something in the console, make sure to import the proper package. 
+Then, in the main function, we can log like this: 
+
+```haskell
+import Effect (Effect)
+
+main = log "Hello world"
+```
+
+## Variables 
+
