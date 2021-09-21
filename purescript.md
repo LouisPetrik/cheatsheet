@@ -38,5 +38,25 @@ main = do
   log "Hello World"
 ```
 
+### Logging an expression
+In case of a variable: 
+
+```haskell 
+name = "John Doe"
+
+main = log (show name) 
+```
+
+In case of a function-call: 
+
+```haskell 
+double :: Int -> Int 
+double x = x * 2
+
+main = log (show (double 2))
+```
+
+```
+
 ## Variables 
 
