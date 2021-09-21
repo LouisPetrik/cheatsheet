@@ -216,6 +216,18 @@ logSomething message = log ("My message: " <> message)
 main = logSomething "Hello"
 ```
 
+## Map, Reduce and Filter 
+
+### Map 
+Map transforms a structure based on a pattern, which can be applied to each element. 
+The following code doubles all the number in the passed array: 
+
+```haskell
+map (\n -> n + 1) [1, 2, 3]
+```
+
+Returns "[2, 4, 6]"
+
 ## Arrays 
 
 
