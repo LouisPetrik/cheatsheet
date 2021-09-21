@@ -22,6 +22,19 @@ This is optional, yet, a best practise.
 ```haskell 
 add :: Int -> Int -> Int 
 add a b = a + b 
+```
+
+Since functions are curried, just add another Int -> for each parameter. 
+The code, under the hood looks like this: 
+
+```javascript
+function add(a) {
+  return function(b) {
+    return a + b
+  }
+}
+```
+Confusing, hm? 
 
 ## Using the console 
 To log something in the console, make sure to import the proper package. 
