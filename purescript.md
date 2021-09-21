@@ -26,6 +26,12 @@ To quit: ":quit".
 
 Getting the type of some data: ":type <data>"
 
+## Great ressources for PureScript 
+
+- [The official PureScript book](https://book.purescript.org/)
+- [Jordan's notes](https://jordanmartinez.github.io/purescript-jordans-reference-site/Preface.html) 
+- [Pursuit](https://pursuit.purescript.org/)
+
 ## Functions
 
 ### Writing a function with a return
