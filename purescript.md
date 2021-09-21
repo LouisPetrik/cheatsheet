@@ -76,7 +76,62 @@ This will get "4" logged. Surprise!
 Please notice the additional braces around the function-call. 
 Optionally, store the function call in a variable before logging. 
 
+### Concatinating stuff in the console 
+In this example, we have a function for doubling an integer. The second function
+calls the first one, but converts and returns the first ones value to a string. 
+Plus, it concatinates it with another string: 
+
+```haskell 
+doubleNumber :: Int -> Int
+doubleNumber x = x * 2
+
+printDoubleNumber :: Int -> String 
+printDoubleNumber x = "The Result: " <> (show (doubleNumber x))
+
+main = log (printDoubleNumber 2)
 ```
 
-## Variables 
+In the console: 
+"The Result: 4" 
+
+## Records, aka. Objects 
+Records are basically like Objects in JS. Yet, immutable, of course. 
+As with functions, we can and should describe their structure and types before
+initialising them: 
+
+```haskell
+type Person =
+  { name :: String,
+    age :: Int }
+
+max :: Person
+max = { name: "Max", age: 22 }
+
+main = log (show max)
+```
+
+The code will log the following in the console: 
+```
+{ age: 22, name: "Max" }
+```
+As you acn see, just like an object in JavaScript. 
+
+### Accessing a records properties
+Accessing those works just like in JavaScript, using the "."-operator. 
+
+```haskell
+main = log (show max.name)
+```
+
+We can also create a function to access the name-property of a Person-type variable: 
+
+```haskell
+getName :: Person -> String 
+getName person = person.name 
+
+main = log (show (getName max))
+```
+
+
+
 
