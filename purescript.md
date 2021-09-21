@@ -61,6 +61,23 @@ function add(a) {
 ```
 Confusing, hm? 
 
+## Function recursion 
+Recursive is a function that calls itself. This is really useful to write clean code. 
+The following example is a recursive function. It receives a number as starting value, 
+and calls the function as long the number is < 10. Of course, this is absolutely useless, because it makes out of any passed number below 10 a 10 as return. 
+
+```haskell 
+sumToTen :: Int -> Int 
+sumToTen n = 
+  if n == 10 then 
+    10 
+  else 
+    sumToTen (n + 1)
+
+main = log (show (sumToTen 0))
+```
+Result will be "10". 
+
 ## Using the console 
 To log something in the console, make sure to import the proper package. 
 Then, in the main function, we can log like this: 
