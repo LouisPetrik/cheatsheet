@@ -1,4 +1,4 @@
-# PureScript
+# PureScript Cheatsheet
 
 
 ## Overview 
