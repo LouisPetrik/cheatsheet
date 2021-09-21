@@ -29,5 +29,14 @@ import Effect (Effect)
 main = log "Hello world"
 ```
 
+### Logging more than one thing
+To run more than one thing in the main function, we need to use the do-keyword an proper indentation: 
+
+```haskell 
+main = do
+  log "Hello world"
+  log "Hello World"
+```
+
 ## Variables 
 
