@@ -31,6 +31,10 @@ Getting the type of some data: ":type <data>"
 - [The official PureScript book](https://book.purescript.org/)
 - [Jordan's notes](https://jordanmartinez.github.io/purescript-jordans-reference-site/Preface.html) 
 - [Pursuit](https://pursuit.purescript.org/)
+- [Functional Programming Made Easier - Book. There is a free sample which is awesome](https://leanpub.com/fp-made-easier) 
+  
+
+
 
 ## Functions
 
@@ -264,7 +268,7 @@ map show [1, 2, 3]
 -- ["1","2","3"]
 ```
 
-## Filter 
+### Filter 
 A filter can be applied to a structure, to only copy the values matching a certain pattern. 
 
 The following filter filters an array for all even numbers: 
@@ -277,7 +281,7 @@ filter (\n -> mod n 2 == 0) [1, 2, 3, 4, 5, 6]
 
 ## Arrays 
 
-## Generating Array in Range: 
+### Generating Array in Range: 
 
 ```haskell
 range 0 5
@@ -289,14 +293,14 @@ Or:
 (0 .. 5)
 ```
 
-## Concatenating Arrays 
+### Concatenating Arrays 
 The concat function takes an Array of Arrays, and concatenates them: 
 
 ```haskell
 concat [[1, 2, 3], [4, 5]]
 -- [1,2,3,4,5]
 ```
-## Concat Map 
+### Concat Map 
 Map receives a function from values to values. Concat Map takes a function from values to arrays of values. 
 
 Here is a quick example: 
@@ -314,6 +318,43 @@ concatMap (\n -> [n, n * n]) (1 .. 5)
 -- [1,1,2,4,3,9,4,16,5,25]
 ```
 
+## Folds 
+
+Make sure to import: 
+```haskell
+import Data.Foldable
+```
+
+There are two basic folds: ```foldr``` which stands for "fold from the right", and ```foldl``` which stands for "fold from the left".  
+
+```haskell
+foldl (+) 0 [1, 2, 3]
+-- 6
+
+foldr (+) 0 [1, 2, 3]
+-- 6
+```
+No matter the direction, both fold-functions sum up the values of the array. We can provide other operations than just addition: 
+
+```haskell
+foldl (*) 0 [1, 2, 3, 4]
+-- 0
+```
+But why does multiplying all the values with each other lead to "0" as a result? Because of the "0" we provide after the operator. It can be thought of as an accumulator, accumulating a result after we traversed the array. 
+
+Let's improve that to multiply all the values with each other:
+
+```haskell
+foldl (*) 1 [1, 2, 3, 4]
+-- 24
+```
+
+Or, to double the output: 
+
+```haskell
+foldl (*) 2 [1, 2, 3, 4]
+-- 48
+```
 
 ## Importing modules 
 
