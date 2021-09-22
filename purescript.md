@@ -68,7 +68,7 @@ function add(a) {
 ```
 Confusing, hm? 
 
-## Function recursion 
+### Function recursion 
 Recursive is a function that calls itself. This is really useful to write clean code. 
 The following example is a recursive function. It receives a number as starting value, 
 and calls the function as long the number is < 10. Of course, this is absolutely useless, because it makes out of any passed number below 10 a 10 as return. 
@@ -84,6 +84,19 @@ sumToTen n =
 main = log (show (sumToTen 0))
 ```
 Result will be "10". 
+
+### The do-keyword in functions 
+
+The do keyword allows to make code in functions more readable and to work with different expressions. In the following example, "j" and "i" are both expressions, used in a final expression at the bottom which is finally returned. 
+
+
+```haskell
+factors :: Int -> Array (Array Int)
+factors n = filter (\xs -> product xs == n) do
+  i <- 1 .. n
+  j <- i .. n
+  [ [ i, j ] ]
+```
 
 ## Using the console 
 To log something in the console, make sure to import the proper package. 
