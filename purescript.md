@@ -244,6 +244,13 @@ addOne x = x + 1
 newArr = map addOne [1, 2, 3] 
 ```
 
+The same works for predefined functions: 
+
+```haskell
+map show [1, 2, 3]
+-- ["1","2","3"]
+```
+
 ## Arrays 
 
 
