@@ -297,7 +297,7 @@ As you can see, the map in this case produces an array of arrays. Often, this is
 Through the concat map, it is turned into a single array: 
 
 ```haskell
-concactMap (\n -> [n, n * n]) (1 .. 5)
+concatMap (\n -> [n, n * n]) (1 .. 5)
 -- [1,1,2,4,3,9,4,16,5,25]
 ```
 
