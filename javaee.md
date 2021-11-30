@@ -2,6 +2,18 @@
 
 Let's have a look at yesterday's tech stack.
 
+## Forms-Stuff
+
+```html
+<form method="POST" action="ServletName"></form>
+```
+
+in java:
+
+```java
+@WebServlet("/ServletName")
+```
+
 ## GET and POST
 
 ### Getting a POST requests
