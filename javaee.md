@@ -64,3 +64,14 @@ session.setAttribute("tracker.count", count);
 out.println("This page was opened: " + count + " times");
 
 ```
+
+### Doing a minimal auth with sessions:
+
+```java
+// save the input from a form
+String password = request.getParameter("password");
+
+if (password.equals("xxxx")) {
+   request.getRequestDispatcher("output.jsp").forward(request, response);
+}
+```
