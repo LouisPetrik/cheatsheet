@@ -93,3 +93,15 @@ The wrapping whitespaces are necessary.
 ```html
 <jsp:include page="navbar.jsp" />
 ```
+
+### Redirceting with JSP:
+
+```html
+<jsp:forward page="error.jsp" />
+```
+
+### Accessing the session:
+
+```html
+${ sessionScope.user }
+```
