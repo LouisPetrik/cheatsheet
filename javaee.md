@@ -75,3 +75,21 @@ if (password.equals("xxxx")) {
    request.getRequestDispatcher("output.jsp").forward(request, response);
 }
 ```
+
+## JSP
+
+### Using the templating language for parameters:
+
+```html
+<body>
+	Hello ${ loginname }!
+</body>
+```
+
+The wrapping whitespaces are necessary.
+
+### Including other pages
+
+```html
+<jsp:include page="navbar.jsp" />
+```
