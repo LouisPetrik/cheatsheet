@@ -38,6 +38,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	PrintWriter out = response.getWriter();
 
 	out.println("<h1>Hello world</h1>");
+
+
 }
 ```
 
@@ -132,6 +134,8 @@ Compared to SELECT, INSERT, UPDATE and DELETE will return the number of the affe
 
 ## Using prepared statements:
 
+Prepared statements should be used, to avoid injections.
+
 ```java
 
 PreparedStatement pstmt = con.prepareStatement(
@@ -145,3 +149,74 @@ pstmt.setInt(1, 5);
 
 The first parameter determines the position of the questionmark in the SQL code, which will
 be replaced with an actual value.
+
+All SQL classes should consist of a try-catch block, for example:
+
+```java
+public static int getUserNumber() {
+   int number = 0;
+
+   try {
+      con = DatabaseConnection.getConnection();
+
+      PreparedStatement pstmt = con.prepareStatement(
+         "SELECT COUNT (*) FROM users"
+      );
+
+      ResultSet rs = pstmt.executeQuery();
+
+      if (rs.next()) {
+         zahl = rs.getInt(1)
+      }
+   } catch (SQLException e) {
+      System.out.println("An error occurd");
+   } finally {
+      try {
+         con.close();
+      } catch (SQLException e) {
+         e.printStackTrace();
+      }
+   }
+
+   return number;
+}
+```
+
+Turing a whole table into an HTML table
+
+```java
+
+public static String resultToTable(ResultSet rs) {
+   String table = "<table>";
+
+   try {
+      ResultSetMetaData rsmd = rs.getMetaData();
+      int col = rsmd.getColumnCount();
+      table += "<tr>";
+
+      for (int i = 1; i <= col; i++) {
+         table += "<th>" + firstUpper(rsmd.getColumnName(i)) + "</th>";
+      }
+
+      table += "</tr>";
+
+   do {
+   table += "<tr>";
+
+   for (int i = 1; i <= col; i++) {
+      table += "<td>" + rs.getString(i) + "</td>";
+   }
+
+   table += "</tr>";
+
+   } while (rs.next());
+      table += "</table> <br/>";
+
+   } catch (SQLException e) {
+      table = "Keine Ergebnisse";
+   }
+
+   return table;
+}
+
+```
