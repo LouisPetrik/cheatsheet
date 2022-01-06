@@ -105,3 +105,43 @@ The wrapping whitespaces are necessary.
 ```html
 ${ sessionScope.user }
 ```
+
+## Working with Postgres
+
+Important things to setup up:
+
+-  A provided DatabaseConnection class in the src of the eclipse project
+-  The imported driver in the WEB-INF/lib/postgres-xxx.jar
+
+## How to: Queries etc.
+
+Using the auto-commit flag, transaction will be executed automatically, see:
+
+```java
+autoCommit(boolean autoCommitFlag)
+```
+
+Make transaction a change: commit()
+To undo changes: rollback()
+
+It is important to close the database connection: close()
+
+Some no-brainers:
+
+Compared to SELECT, INSERT, UPDATE and DELETE will return the number of the affected row.
+
+## Using prepared statements:
+
+```java
+
+PreparedStatement pstmt = con.prepareStatement(
+   "SELECT * FROM person WHERE name = ?"
+);
+
+pstmt.setString(1 "Doe");
+pstmt.set(1, Types.INTEGER);
+pstmt.setInt(1, 5);
+```
+
+The first parameter determines the position of the questionmark in the SQL code, which will
+be replaced with an actual value.
