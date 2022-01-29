@@ -4,15 +4,39 @@
 ## Overview
 
 - ### [Getting started, tools & the REPL](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#getting-started-tools--the-repl-1)
-- ### [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#functions)
+- ### [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#functions-1)
 - ### [Using the console](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#using-the-console-1)
-- ### [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records)
+- ### [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records-1)
 - ### [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals-1)
 - ### [Impure functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#impure-functions-1)
 - ### [Map, Reduce and Filter](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#map-reduce-and-filter-1)
 
 
 ## Getting started, tools & the REPL
+
+Installing PureScript on your machine: 
+
+```bash
+npm install -g purescript 
+npm install -g spago 
+```
+
+Creating a new project: 
+(Make sure to first create an empty directory, spago will set up in the current dir)
+```bash
+spago init
+```
+
+Running: 
+```bash
+spago run
+```
+
+Building for the web: 
+
+```bash
+spago bundle-app
+```
 
 You can start the REPL with "spago repl".
 
