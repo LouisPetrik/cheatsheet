@@ -3,7 +3,7 @@
 
 ## Overview
 
-- ### [Getting started, tools & the REPL](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#)
+- ### [Getting started, tools & the REPL](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#getting-started-tools--the-repl-1)
 - ### [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#functions)
 - ### [Using the console](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#using-the-console-1)
 - ### [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records)
