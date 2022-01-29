@@ -3,6 +3,7 @@
 
 ## Overview
 
+- ### [Getting started, tools & the REPL](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#)
 - ### [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#functions)
 - ### [Using the console](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#using-the-console-1)
 - ### [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records)
@@ -11,7 +12,7 @@
 - ### [Map, Reduce and Filter](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#map-reduce-and-filter-1)
 
 
-## The REPL
+## Getting started, tools & the REPL
 
 You can start the REPL with "spago repl".
 
@@ -180,7 +181,7 @@ The code will log the following in the console:
 ```
 { age: 22, name: "Max" }
 ```
-As you acn see, just like an object in JavaScript.
+As you can see, just like an object in JavaScript.
 
 ### Accessing a records properties
 Accessing those works just like in JavaScript, using the "."-operator.
@@ -367,3 +368,9 @@ import Data.Array (last)
 --- Or, to import all functions from the package:
 import Data.Array
 ```
+
+## Sum and Product Types 
+
+Let's try to explain what these mean. 
+
+The easiest sum type to grasp in PureScript is the boolean type: 
