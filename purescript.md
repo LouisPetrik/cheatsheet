@@ -10,6 +10,9 @@
 - ### [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals-1)
 - ### [Impure functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#impure-functions-1)
 - ### [Map, Reduce and Filter](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#map-reduce-and-filter-1)
+- ### [Modules]
+
+
 
 
 ## Getting started, tools & the REPL
@@ -452,4 +455,38 @@ fst someTuple
 
 snd someTuple 
 -- 4
+```
+
+## Modules 
+
+Modules are the way to split up our code into multiple files. Here is an example of writing a function in
+a file, and importing it in our main-module (Main.purs)
+
+Tests.purs: 
+```haskell
+module Tests where
+
+import Prelude
+import Effect (Effect)
+import Effect.Console (log)
+
+print :: Effect Unit 
+print = do 
+  log "from Tests.purs!"
+```
+
+
+Main.purs: 
+```haskell
+module Main where
+
+import Prelude
+
+import Effect (Effect)
+import Effect.Console (log)
+
+import Tests as Tests 
+
+main :: Effect Unit
+main = Tests.print 
 ```
