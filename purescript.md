@@ -10,7 +10,7 @@
 - ### [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals-1)
 - ### [Impure functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#impure-functions-1)
 - ### [Map, Reduce and Filter](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#map-reduce-and-filter-1)
-- ### [Modules]
+- ### [Modules](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#modules-1)
 
 
 
@@ -490,3 +490,4 @@ import Tests as Tests
 main :: Effect Unit
 main = Tests.print 
 ```
+
