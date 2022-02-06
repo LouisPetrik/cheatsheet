@@ -38,6 +38,34 @@ Building for the web:
 spago bundle-app
 ```
 
+
+### Getting started the recommended way: 
+This way avoids a global installation of PureScript to ensure working with multiple projects in different versions. 
+
+(Make sure to first create an empty directory, spago will set up in the current dir)
+
+```bash 
+npm init -y
+
+npm install --save-dev spago purescript
+
+# to check whether installation works: 
+npx spago version
+```
+As you can see, using NPM like this only installs Spago and PureScript locally, for development - bound to your project. 
+
+Then, using NPX you can initialise the PureScript project just like before: 
+
+```bash
+npx spago init
+
+npx spago run
+
+npx spago run
+```
+
+
+
 You can start the REPL with "spago repl".
 
 You can import any module from the src-directory with: "import Module"
