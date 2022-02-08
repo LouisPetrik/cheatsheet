@@ -12,6 +12,10 @@
 -  ### [Modules](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#modules-1)
 -  ### [Useful default functions]
 
+Coming soon: 
+
+- ### Creating operators 
+
 ## Getting started, tools & the REPL
 
 Installing PureScript on your machine:
@@ -85,7 +89,9 @@ Getting the type of some data: ":type <data>"
 -  [The official PureScript book](https://book.purescript.org/)
 -  [Jordan's notes](https://jordanmartinez.github.io/purescript-jordans-reference-site/Preface.html)
 -  [Pursuit](https://pursuit.purescript.org/)
--  [Functional Programming Made Easier - Book. There is a free sample which is awesome](https://leanpub.com/fp-made-easier)
+-  [Functional Programming Made Easier - Book. There is a free sample which is awesome](https://leanpub.com/fp-made-easier) 
+
+The FP made easier book also serves as the original source of knowledge for this cheatsheet. 
 
 ## Functions
 
@@ -514,3 +520,36 @@ main = Tests.print
 This section is going to cover some useful functions, available by default, like const, apply, flip and more.
 
 ### const
+
+While in JavaScript, const is a keyword used to specifiy variables, in PureScript "const" is something different. 
+The const-function returns a constant - it does this by receiving two parameters, and only returning the first one. 
+You could implement it yourself like this: 
+
+```haskell
+const :: forall a b. a -> b -> a 
+const x _ = x 
+```
+Using it: 
+
+```haskell
+filter (const true) [1, 2, 3]
+--- [1, 2, 3]
+```
+In this example, const is used to solve a small problem. Filter takes a function as the first parameter. This function is used to determine, which values from the second parameter (an array) should be filtered out. To not filter anything at all, we pass const as it is a function and only returns the first parameter - "true". Therefore, our filter-criteria is "true", and thus, all values in the array are returned. 
+
+### flip 
+
+flip helps us to flip around the order of parameters, applied to a function. 
+
+As we just learned about const, it helps us to visualize what flip actually does: 
+
+```haskell 
+log (show (const 1 2))
+```
+Since the second parameter is ignored, and only the first one is returned, the above shown code prints "1". 
+
+Now, when applying flip to it, "2" is printed: 
+
+```haskell
+log (show (flip const 1 2))
+```
