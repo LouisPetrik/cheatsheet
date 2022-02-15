@@ -289,6 +289,18 @@ The output: "Number is NOT > 10".
 
 You can also pass a condition itself as a parameter, using the type Boolean:
 
+```haskell
+test :: Boolean -> String
+test condition =
+  if condition
+  then "true"
+  else "false"
+
+main = log (test(1 > 2))
+```
+
+The output: "false"
+
 ### Case expressions 
 
 Using the case-of keyword, we can have something similar like a switch-case syntax: 
@@ -305,6 +317,8 @@ printNumber 2
 --- "two"
 ```
 
+The underscore catches all other cases for n, which is required. 
+
 ### Pattern matching 
 Depending on your knowledge of other languages, you might view this concept as PureScript's style of function-overloading. 
 Through repeating our function definition without mentioning our parameter-variable, we do pattern matching. Instead of writing the 
@@ -320,20 +334,23 @@ printNumber n = "another number"
 
 Make sure to cover every other case again. 
 
-
-The underscore catches all other cases for n, which is required. 
+### Guards 
+Last but not least, Guards can help us to realize the same function as with the ways I showed you before. 
+Regarding the syntax, there are two important things: 
+1. There is no equal-sign in the beginning. 
+2. After the | (OR-sign) a condition must follow. That's why we always write 1 == n, etc. in the following code example. 
 
 ```haskell
-test :: Boolean -> String
-test condition =
-  if condition
-  then "true"
-  else "false"
-
-main = log (test(1 > 2))
+printNumber :: Int -> String 
+printNumber n 
+  | 0 == n = "zero"
+  | 1 == n = "one"
+  | 2 == n = "two"
+  | otherwise = "another number"
 ```
 
-The output: "false"
+Guards can be combined with case-expressions. 
+
 
 ## Impure functions
 
