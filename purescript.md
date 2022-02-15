@@ -5,14 +5,17 @@
 -  ### [Getting started, tools & the REPL](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#getting-started-tools--the-repl-1)
 -  ### [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#functions-1)
 -  ### [Bindings](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#bindings-1)
+-  ### [Custom types]()
 -  ### [Using the console](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#using-the-console-1)
 -  ### [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records-1)
 -  ### [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals-1)
 -  ### [Impure functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#impure-functions-1)
 -  ### [Map, Reduce and Filter](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#map-reduce-and-filter-1)
+-  ### [Arrays](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#arrays)
 -  ### [Modules](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#modules-1)
 -  ### [Useful default functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#useful-default-functions-1)
 -  ### [Lists](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#lists)
+-  ### [Typeclasses]
 
 Coming soon: guards, creating operators 
 
@@ -199,6 +202,38 @@ sumAndProduct x y =
   let sum = x + y
       product = x * y in 
   Tuple sum product 
+```
+
+## Custom Types 
+
+Creating data types and re-naming types is powerful. To achieve both things, PureScript offers two keywords: 
+Using "Type" we can alias existing types. Using "Data" we can define custom data types. 
+
+### type keyword 
+
+This keyword helps to reference existing data types.
+
+```haskell 
+type MultipleChars = String 
+
+someString :: MultipleChars 
+someString = "Hello world" 
+```
+
+It is also used to create the type definition for records and other complex structures. 
+
+### data keyword 
+
+The data keyword is a little bit more complex. On the left-hand side, we have the actual data type. On the right-hand side of 
+the equals-sign is the so-called data constructor. Custom data types must always start with an uppercase letter. 
+
+```haskell 
+data MyDataType = MyDataType 
+```
+
+Default types like Boolean can be writen with the data keyword, even though this will collapse with the existing type. 
+```haskell 
+data Boolean = True | False
 ```
 
 ## Using the console
@@ -771,4 +806,32 @@ Based on a list of lists, this function concatenates the given lists:
 ```haskell 
 concat ((1 : 2 : Nil) : (3 : Nil) : Nil) 
 --- (1 : 2 : 3 : Nil)
+```
+
+## Typeclasses 
+
+No, typeclasses are not related to classes in object oriented programming. Rather, typeclasses can be imagined as interfaces in functional programming. Typeclasses serve to overload functions for different data types, for example. First, we define the class itself and the signature of the functions it holds. Then, we can create as many instances as we like to - these instances are usually created for different data types. Nevertheless, all instances must define the functions which are declared in the related typeclass. Let's look at an example. 
+
+As you might know, we can represent boolean values as integers. true is 1, and false is 0. Let's create a typeclass that gives us a method (functions in typeclasses are called methods) that returns the related integer of the boolean, or returns the integer we passed. So, our method should be able to work with integers but also with booleans. 
+
+```haskell 
+class ToInt n where 
+  toNum :: n -> Int 
+
+instance intToInt :: ToInt Int where 
+  toNum n = n 
+
+instance booleanToInt :: ToInt Boolean where
+  toNum true = 1 
+  toNum false = 0 
+```
+
+Calling the method of our typeclass: 
+
+```haskell 
+toNum 10 
+--- 10
+
+toNum true 
+--- 1
 ```
