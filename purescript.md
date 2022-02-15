@@ -4,7 +4,7 @@
 
 -  ### [Getting started, tools & the REPL](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#getting-started-tools--the-repl-1)
 -  ### [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#functions-1)
--  ### [Bindings]()
+-  ### [Bindings](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#bindings-1)
 -  ### [Using the console](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#using-the-console-1)
 -  ### [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records-1)
 -  ### [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals-1)
