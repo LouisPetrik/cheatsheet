@@ -11,10 +11,9 @@
 -  ### [Map, Reduce and Filter](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#map-reduce-and-filter-1)
 -  ### [Modules](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#modules-1)
 -  ### [Useful default functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#useful-default-functions-1)
+-  ### [Lists](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#lists)
 
-Coming soon: guards 
-
-- ### Creating operators 
+Coming soon: guards, creating operators 
 
 ## Getting started, tools & the REPL
 
