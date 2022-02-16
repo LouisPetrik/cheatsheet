@@ -1,8 +1,12 @@
 # Haskell Cheatsheet
 
+Disclaimer: As I covered many of the basics of PureScript, and as PureScript and Haskell are closely related, this Cheatsheet will try to cover Haskell-unique stuff primarly. If you want to know how recursion and high-order functions in Haskell work, have a look at the [PureScript Cheatsheet](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md) - it works the same ;) 
+
 ## Overview
 
 - ### [GHCI & Hello World!]()
+- ### [Functions]
+- ### []
 
 
 ## GHCI
