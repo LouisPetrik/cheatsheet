@@ -5,17 +5,17 @@
 -  ### [Getting started, tools & the REPL](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#getting-started-tools--the-repl-1)
 -  ### [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#functions-1)
 -  ### [Bindings](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#bindings-1)
--  ### [Custom types]()
+-  ### [Custom types](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#custom-types-1)
 -  ### [Using the console](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#using-the-console-1)
 -  ### [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records-1)
 -  ### [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals-1)
--  ### [Impure functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#impure-functions-1)
+-  ### [Pattern matching](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals-1)
 -  ### [Map, Reduce and Filter](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#map-reduce-and-filter-1)
 -  ### [Arrays](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#arrays)
 -  ### [Modules](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#modules-1)
 -  ### [Useful default functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#useful-default-functions-1)
 -  ### [Lists](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#lists)
--  ### [Typeclasses]
+-  ### [Typeclasses](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#typeclasses-1)
 
 Coming soon: guards, creating operators 
 
@@ -98,6 +98,8 @@ The FP made easier book also serves as the original source of knowledge for this
 
 ## Functions
 
+As the name of functional programming suggests it, this style of writing code resolves all around writing functions - so, let's cover what you need to know. 
+
 ### Writing a function with a return
 
 ```haskell
@@ -153,6 +155,47 @@ main = log (show (sumToTen 0))
 ```
 
 Result will be "10".
+
+
+### Higher-order functions 
+
+A higher-order function is a function, that takes another function as a parameter / and or returns another function. This might sound weird at first, but trust me, you used higher-order functions before, and the concept is really powerful. For example, map, filter and reduce as we also have them in JavaScript or Python, are higher-order functions. 
+
+Let's write a function, that takes another function as a parameter: 
+
+```haskell 
+doubleNum :: Int -> Int 
+doubleNum n = n * 2
+
+divideByTwo :: (Int -> Int) -> Int -> Int 
+divideByTwo fun n = (fun n) / 2 
+```
+Our divideByTwo function takes a function with the signature (Int -> Int) as the first parameter. In this functions signature, you can see the () - they always mean we expect a function as a parameter. Then, divideByTwo takes a single Integer, and finally returns an integer. 
+In the definition you can see that we take the providied function and call it "fun", then pass n to this function. 
+
+Now, let's use the functions: 
+
+```haskell 
+divideByTwo doubleNum 4 
+--- 4
+```
+
+As we undo the multiplication through dividing, the output is 4 again. 
+
+### Impure functions
+
+By definition, pure functions do not change anything outside of their scope. Logging something in the
+console therefore is an impure function.
+Of course we can log something from a function, instead of returning a value.
+This is the case of an impure function:
+
+```haskell
+logSomething :: String -> Effect Unit
+logSomething message = log ("My message: " <> message)
+
+
+main = logSomething "Hello"
+```
 
 ### The do-keyword in functions
 
@@ -343,7 +386,7 @@ main = log (getName max)
 
 ## Conditionals
 
-There are a couple ways to execute code conditionally in PureScript: If-then-else, case expressions, pattern matching and guards. 
+There are a couple ways to execute code conditionally in PureScript: If-then-else, case expressions, pattern matching (there is a whole section below on this topic) and guards. 
 Let's start with the classic one, the if-else-then syntax in PureScript
 
 ### if-then-else
@@ -426,20 +469,10 @@ printNumber n
 Guards can be combined with case-expressions. 
 
 
-## Impure functions
+## Pattern matching 
 
-By definition, pure functions do not change anything outside of their scope. Logging something in the
-console therefore is an impure function.
-Of course we can log something from a function, instead of returning a value.
-This is the case of an impure function:
+Before, we just covered a little bit of pattern matching in functions - let's go into more detail, and learn about pattern matching for different data types. 
 
-```haskell
-logSomething :: String -> Effect Unit
-logSomething message = log ("My message: " <> message)
-
-
-main = logSomething "Hello"
-```
 
 ## Map, Reduce and Filter
 
