@@ -6,9 +6,11 @@ Disclaimer: As I covered many of the basics of PureScript, and as PureScript and
 
 - ### [GHCI & Hello World!]()
 - ### [Datatypes]
+- ### [Custom Data]
 - ### [Functions]
 - ### [Lists]
 - ### [Typeclasses]
+- ### [In and output]
 - ### [Monads]
 
 
@@ -89,6 +91,52 @@ Often you will see function signatures like this one:
 head :: [a] -> a
 ```
 Notice the a? While the [a] surely stands for a list, a itself can be anything when it comes to types. Therefore the head function can take a list of chars, strings, integers and return a single element of the same type. a is a type variable. 
+
+
+```haskell
+data Person = Person String Int
+
+john = Person "John" 20
+```
+
+You might wonder why there is a second "Person" on the right side of the equals sign - yet, john would looks like this in JavaScript: 
+
+```javascript
+const john = new Person("John", 22);
+```
+
+"Person" in the right side of the equals sign is called the data-constructor. 
+
+For better understanding: 
+
+```haskell 
+data Name = Lastname String | Firstname String
+```
+
+In fact, Lastname and Firstname are both available now as types - we can assign them to functions, constants etc. Once we did so, the values are also of the type "Name". 
+Now, you might understand better what we mean with data constructors - Lastname and Firstname in this case. That's why in the above example of Person, Person is also used the data constructor - there is no subtype belonging to it. 
+
+Using custom data in functions: 
+
+```haskell
+data Name = Lastname String | Firstname String
+
+greetWithFirstname :: Name -> String
+greetWithFirstname (Firstname name) = name
+```
+And calling the function: 
+
+```haskell
+greetWithFirstname (Firstname "Max")
+"Max"
+```
+
+In the type declaration, you can see that we use Name as the first parameter - not Firstname, which the function actually wants to use. The reason is, that Firstname is a constructor - not a type. Name is the type, and in the function declaration, types are needed. 
+
+
+### Using type parameters 
+
+
 
 ## Functions 
 
@@ -183,7 +231,7 @@ To make it a fixed size: (10 times 5):
 take 10 (repeat 5)
 ```
 
-### Typeclasses 
+## Typeclasses 
 
 ```haskell 
 :t (+) 
@@ -191,6 +239,28 @@ take 10 (repeat 5)
 ```
 
 When asking GHCI for the type of an operator like the plus-operator, you will notice that it is basically a function. Everything before the => sign is called the class constraint.  
+
+### Creating a typeclass on our own: 
+
+
+## In and output 
+
+When initialising records for example, you might have noticed that you are unable to print
+them easily in GHCI. There is a simple solution to that. Derive Show so Haskell will know how to actually print your values: 
+
+```haskell
+data Dog = Dog
+  { name :: String,
+    race :: String,
+    age :: Int
+  }
+  deriving (Show)
+
+woody = Dog {name = "Woody", race = "Labrador", age = 12}
+```
+
+Then, in GHCI just type "woody" and the record will be printed. 
+
 
 ## Tuples 
 
@@ -206,4 +276,10 @@ fst (1, 2)
 
 snd (1, 2)
 --- 2
-```:
+```
+
+
+## Modules 
+
+Modules are a collection of functions, types and typeclasses, bundled. 
+
