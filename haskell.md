@@ -5,7 +5,7 @@ Disclaimer: As I covered many of the basics of PureScript, and as PureScript and
 ## Overview
 
 - ### [GHCI & Hello World!]()
-- ### [Data types](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#data-types)
+- ### [Data types](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#data-types-1)
 - ### [Custom Data]
 - ### [Functions]
 - ### [Lists]
@@ -87,6 +87,28 @@ A char is a single character. A string is technically an array of chars, which i
 Enum stands for enumeration, and might be known from many other programming languages. 
 
 Creating a custom enumeration: 
+
+```haskell
+data Numbers = One | Two | Three | Four | Five | Six
+  deriving (Eq, Ord, Show, Read, Bounded, Enum)
+```
+
+Ignore the deriving-stuff for a moment. It just enables us to use a lot of functions on this type of data. When opening up the console, you can now see, that we have an ordered enumeration: 
+
+```haskell 
+One > Two 
+False 
+
+Two > One 
+True
+
+minBound :: Numbers 
+One 
+
+succ One 
+Two 
+```
+More on the deriving-syntax [here](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#deriving-instances)
 
 Types always start with an uppercase letter. 
 
