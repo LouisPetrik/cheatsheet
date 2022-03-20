@@ -5,13 +5,14 @@ Disclaimer: As I covered many of the basics of PureScript, and as PureScript and
 ## Overview
 
 - ### [GHCI & Hello World!]()
-- ### [Datatypes]
+- ### [Data types](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#data-types)
 - ### [Custom Data]
 - ### [Functions]
 - ### [Lists]
 - ### [Typeclasses]
 - ### [In and output]
 - ### [Monads]
+- ### [Tips & Tricks]
 
 
 ## GHCI
@@ -81,6 +82,12 @@ While "Int" is the classic integer type bound to a size, so limited in the numbe
 
 A char is a single character. A string is technically an array of chars, which is why strings are often noted as [Char] in Haskell. Nevertheless, we can also use "String". 
 
+### Enums 
+
+Enum stands for enumeration, and might be known from many other programming languages. 
+
+Creating a custom enumeration: 
+
 Types always start with an uppercase letter. 
 
 ### Type variables 
@@ -136,9 +143,78 @@ In the type declaration, you can see that we use Name as the first parameter - n
 
 ### Using type parameters 
 
+As we covered data constructors before, we can now move on to types parameters. 
 
+```haskell 
+data Maybe a = Nothing | Just a 
+```
+
+In this example, a is a type parameter. Maybe on the other hand, is the type constructor. 
+Why Maybe is a type constructor, might be more clearly when interacting with the parameter. We can pass almost anything into a, resulting in a "Maybe String", "Maybe Char", "Maybe Person" etc. The values themselves can never just have a type of only Maybe, since Maybe is a constructor, not an actual type. 
+
+To make it even more clear, when we pass String to Maybe, the resulting type will be Maybe String. On the other hand, Just 'Hello World' has a type of Maybe [Char]. 
+
+Important to understand is also, that the type of "Nothing" is "Maybe a". Therefore, we can pass Nothing to each function requiring a "Maybe x" (String, Integer etc.). 
+
+### Deriving instances 
+
+In Haskell, we can force our data type to be derived of a certain typeclass. We will see in a second what this means. 
+Here is an example. 
+
+```haskell
+data Person = Person {
+  firstname: String, 
+  lastname: String
+} deriving (Eq)
+```
+
+Now, let's create two people of the data type "Person": 
+
+```haskell 
+maxi :: Person
+maxi = Person {firstname = "Max", lastname = "Meyer"}
+
+carl :: Person
+carl = Person {firstname = "Carl", lastname = "Johnson"}
+```
+
+Thanks to deriving the Eq-class which is used for equality-checking and related stuff, we can check whether two people of type "Person" are equal: 
+
+```haskell 
+maxi == carl 
+False 
+```
+
+When trying to show a Person in the console, you will initially fail - yet, it is another problem to be solved with deriving a typeclass. All we need to do is deriving the show-typeclass, too: 
+
+```haskell
+data Person = Person {
+  firstname: String, 
+  lastname: String
+} deriving (Eq)
+```
 
 ## Functions 
+
+
+### Working with typeclasses as function parameters. 
+
+Usually, we strictly define the types of values our function should take and return in the function declaration: 
+
+```haskell 
+add :: Int -> Int -> Int 
+add x y = x + y 
+```
+
+Yet, sometimes we want to use a broader spectrum of types that might be applied to our function. Coming back to the add-function, we must keep in mind that not just integer-values can be added. To make our function more general, we can instead of mentioning single types, use the whole class: 
+
+```haskell 
+add2 :: Num x => x -> x -> x
+add2 x y = x + y
+```
+
+Now we can even execute "add 2 2.5" succesfully. 
+
 
 
 ## Lists 
@@ -283,3 +359,12 @@ snd (1, 2)
 
 Modules are a collection of functions, types and typeclasses, bundled. 
 
+
+## Tips & Tricks 
+
+### Unable to show certain stuff in the console? 
+
+```haskell 
+instance Show (a -> b) where
+  show a = "function"
+```
