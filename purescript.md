@@ -946,3 +946,33 @@ import Calculations
 double 2 
 -- 4
 ```
+
+For making existing functions of JavaScript available, you can just mark them to be exported. Again, our Calucations.js: 
+
+```javascript
+'use strict'
+exports.power = Math.power
+```
+
+Importing stays the same. 
+
+### Importing PureScript functions in JavaScript 
+
+The most interesting part might be to import functions in JavaScript. In this example, we will import a PS function in Node.js. 
+
+In the Main.purs file, I stored a function "double": 
+
+```haskell
+double :: Int -> Int 
+double n = n * 2 
+```
+
+Now, when running 
+```bash
+spago bundle-ap
+```
+Our PS file will be transcompiled to JavaScript, and stored in /output/Main/index.js, from where we can import functions. 
+
+NOTE: No, this is not the same as running spago bundle-app and then to import the root-level index.js, which is generated. For bundling the index.js in the root of your PS project directory, dead code is removed - this includes functions, never called from your PS main function. 
+Therefore, using the central index.js is for building a whole PS project. The way I just taught you is for importing single functions, written in PureScript. 
+
