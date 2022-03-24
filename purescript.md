@@ -21,6 +21,7 @@ Almost all my knowledge about PureScript, a purely functional programming langua
 -  ### [Useful default functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#useful-default-functions-1)
 -  ### [Lists](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#lists)
 -  ### [Typeclasses](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#typeclasses-1)
+-  ### [Interaction with JavaScript](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#interaction-with-javascript-1)
 
 Coming soon: guards, creating operators 
 
@@ -908,4 +909,40 @@ toNum 10
 
 toNum true 
 --- 1
+```
+
+## Interaction with JavaScript 
+
+This part resolves around using PureScript functions in JavaScript, and the other way around - using JavaScript functions in 
+PureScript. 
+
+### Importing foregin JS functions in PureScript 
+
+For this task, there is the so-called foreign function interface. For making a single or multiple JS functions 
+available in PureScript, we always need a JavaScript file, holding the functions, and a PureScript file, referencing those, making them available as PureScript imports. 
+
+Let's create a JS function for doubling a given integer. To do so, create in the src-folder of your PS app a Calculations.js: 
+
+```javascript
+'use strict'
+exports.double = function (n) {
+  return 2 * n
+}
+```
+
+Then, the Calculations.purs, to make this function available: 
+
+```haskell 
+module Calculations where
+
+foreign import double :: Int -> Int
+```
+
+Finally, you can import and use the double function: 
+
+```haskell 
+import Calculations 
+
+double 2 
+-- 4
 ```
