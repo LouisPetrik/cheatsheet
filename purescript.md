@@ -976,3 +976,48 @@ Our PS file will be transcompiled to JavaScript, and stored in /output/Main/inde
 NOTE: No, this is not the same as running spago bundle-app and then to import the root-level index.js, which is generated. For bundling the index.js in the root of your PS project directory, dead code is removed - this includes functions, never called from your PS main function. 
 Therefore, using the central index.js is for building a whole PS project. The way I just taught you is for importing single functions, written in PureScript. 
 
+### Importing uncurried functions from JavaScript
+
+The example we had before covered a function in JavaScript (double) that has only one parameter. As you might know, all functions in PureScript only have a single-parameter, for multiple ones, we use currying, [covered here](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#writing-a-function-with-more-than-one-parameter). 
+
+Therefore, we can't import a JS function with more than one parameter as before - we need to prepare PureScript for it. 
+
+Let's rewrite our Calculation package this way: 
+
+```javascript 
+exports.addNums = function (a, b) {
+  return a + b
+}
+```
+Now, before writing the PS code, make sure to import the package for the wrapper we need: 
+```bash
+spago install purescript-functions
+```
+
+Calculations.purs: 
+
+```haskell 
+module Calculations where
+
+import Data.Function.Uncurried
+
+foreign import addNums :: Fn2 Int Int Int 
+```
+
+Fn2 is the function that enables us to use an uncurried function with two parameters. 
+
+Now, we can use addNums in the REPL or code like this: 
+
+```haskell 
+import Calculations 
+import Data.Function.Uncurried (runFn2) 
+
+runFn2 addNums 2 2  
+-- 4
+```
+
+Reminder: When having X parameters in an uncurried JS function, make sure to use runFn and FnX. 
+For example, runFn3, runFn4 up to runFn10 are all available in the package. 
+
+
+
