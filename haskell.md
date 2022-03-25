@@ -6,13 +6,14 @@ Disclaimer: As I covered many of the basics of PureScript, and as PureScript and
 
 - ### [GHCI & Hello World!]()
 - ### [Data types](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#data-types-1)
-- ### [Custom Data]
-- ### [Functions]
-- ### [Lists]
-- ### [Typeclasses]
-- ### [In and output]
+- ### [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#functions-1)
+- ### [Bindings](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#bindings-1)
+- ### [Lists](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#lists-1)
+- ### [Typeclasses](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#typeclasses-1)
+- ### [In and output](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#in-and-output-1)
 - ### [Monads]
-- ### [Tips & Tricks]
+- ### [Modules](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#modules)
+- ### [Tips & Tricks](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#tips--tricks-1)
 
 
 ## GHCI
@@ -57,6 +58,14 @@ Compiling your Haskell file to an executeable:
 
 ```bash
 ghc main.hs
+
+./main.o
+```
+
+Instead of compiling to run it, you can also use "runhaskell" to run your program instantly. 
+
+```bash
+runhaskell main.hs
 ```
 
 Getting the function signature of something: 
@@ -81,6 +90,30 @@ While "Int" is the classic integer type bound to a size, so limited in the numbe
 ### Char & String
 
 A char is a single character. A string is technically an array of chars, which is why strings are often noted as [Char] in Haskell. Nevertheless, we can also use "String". 
+
+### Tuples 
+
+Unlike lists, tuples can hold different types of data. 
+
+We speak of pairs if a tuple has exactly two elements (no-brainer.)
+Function we can use on tuple pairs are fst "first" and snd "second": 
+
+```haskell 
+fst (1, 2)
+--- 1
+
+snd (1, 2)
+--- 2
+```
+
+Tuples can be returned from functions directly: 
+
+```haskell
+returnTuple :: Int -> Int -> (Int, Int)
+returnTuple x y = (x, y)
+```
+
+This function just takes two values and puts them into a tuple. 
 
 ### Enums 
 
@@ -218,6 +251,61 @@ data Person = Person {
 
 ## Functions 
 
+Chapter will be more complete soon. For now, check out the [Functions cheatsheet of PureScript](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#functions-1) as functions work the same way in Haskell. 
+
+### Function composition 
+
+The art of letting functions work together, so for example f1(f2(x)) is called function composition. 
+There are two important signs you should know in Haskell. 
+
+In fact, composing functions like f1(f2(f3(x))) isn't a technical problem - yet is not that pretty.
+In Haskell, the $ and . notation offer some syntactial sugar. 
+
+### $ (Dollar sign notation)
+
+```haskell 
+double :: Int -> Int
+double x = x * 2
+
+triple :: Int -> Int
+triple x = x * 3
+
+-- possible: 
+double (triple 2)
+
+-- cleaner: 
+double $ triple 2
+```
+
+As you can see, the $ notation saves us the parentheses, and even provides for the closing one. Instead of having nested parentheses, your code might look more like this: 
+
+```haskell 
+f1 $ f2 $ f3 $ f4 69 
+```
+
+### . (Dot notation)
+
+The . operator helps us to tie the result of a function on the right side, to the input on the left side. 
+
+Back to our example: 
+
+```haskell 
+-- before: 
+double $ triple 2
+
+-- now: 
+(double . triple) 2
+```
+
+To divide our almost final result by two: 
+
+```haskell
+(divideByTwo . double . triple) 2
+```
+
+I guess you now have a good feeling for both operators. 
+
+
 
 ### Working with typeclasses as function parameters. 
 
@@ -238,6 +326,42 @@ add2 x y = x + y
 Now we can even execute "add 2 2.5" succesfully. 
 
 
+## Bindings 
+
+Bindings can be seen as a replacement for constants in the scope of functions. They don't enable us to do something completely new, but help to make things more clearly, as we can store the result of some expression through a binding. 
+
+### let binding 
+
+```haskell
+abstractCalculation :: Int -> Int -> Int
+abstractCalculation x y =
+  let sum = x + y
+      product = x * y
+   in sum + product
+```
+The function above adds the sum of x & y to their product - nothing special. As you can see, with the let-block we can define constants (sum and product) and close the function with the "in" keyword, which kind of serves as return-statement. Hint: You are not forced to use the defined constants within the in-line. 
+
+
+### where binding 
+
+Using the where keyword we can declare a constant on top of our function which is later initialized. Finally, this constant will be returned from the function. 
+
+```haskell
+addNums :: Int -> Int -> Int
+addNums x y = sum
+  where
+    sum = x + y
+```
+
+Yet, this is not a practical usecase for where. More common is to declare your constant as a complex type like a list or a tuple, and then return it. 
+
+```haskell
+sumAndProduct :: Int -> Int -> (Int, Int)
+sumAndProduct x y = (sum, product)
+  where
+    sum = x + y
+    product = x * y
+```
 
 ## Lists 
 
@@ -375,21 +499,73 @@ woody = Dog {name = "Woody", race = "Labrador", age = 12}
 Then, in GHCI just type "woody" and the record will be printed. 
 
 
-## Tuples 
-
-
-Unlike lists, tuples can hold different types of data. 
-
-We speak of pairs if a tuple has exactly two elements (no-brainer.)
-Function we can use on tuple pairs are fst "first" and snd "second": 
+Here is how we can read input from the command line and output it directly: 
 
 ```haskell 
-fst (1, 2)
---- 1
-
-snd (1, 2)
---- 2
+main = do
+  putStrLn "Enter something: "
+  userInput <- getLine
+  putStrLn ("You entered: " ++ userInput)
 ```
+
+Apart from putStrLn, which prints a string, followed by a new line, there are other functions for outputting: 
+
+- putStr which does the same as putStrLn but doesn't create a new line 
+- print which can take a value of any type, which is an instance of Show 
+
+
+### mapM 
+
+You might have wondered how to combine map & print. Hint, it does not work like this: 
+
+```haskell 
+map print [1, 2, 3]
+```
+
+This code will create a list of IO functions, but will not print 1, 2 and 3 seperately to the console. 
+
+To solves this problem, mapM exists. It takes a function and a list, and will map the function over the list in sequence. 
+
+```haskell 
+mapM print [1, 2, 3]
+1
+2
+3
+```
+
+### forever 
+
+forever will forever repeat the I/O action
+
+```haskell 
+import Control.Monad
+
+main =
+  forever
+    ( do
+        putStr "Enter something"
+        input <- getLine
+        putStrLn input
+    )
+```
+
+
+### getContents for input streams 
+
+```haskell 
+main = do
+  pipeInput <- getContents
+  putStr pipeInput
+```
+
+getContents expects us to provide an input stream, for example, via a UNIX pipe. 
+For example, using cat: 
+
+```bash 
+cat somefile.txt | runhaskell main.hs 
+```
+
+Our Haskell code will print what stands inside our text file. 
 
 
 ## Modules 
@@ -405,3 +581,6 @@ Modules are a collection of functions, types and typeclasses, bundled.
 instance Show (a -> b) where
   show a = "function"
 ```
+
+
+
