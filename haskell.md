@@ -567,6 +567,20 @@ cat somefile.txt | runhaskell main.hs
 
 Our Haskell code will print what stands inside our text file. 
 
+### Reading files 
+
+```haskell 
+import System.IO
+
+main = do
+  fileHandle <- openFile "text.txt" ReadMode
+  fileContent <- hGetContents fileHandle
+  putStr fileContent
+  hClose fileHandle
+```
+
+This will print all the content in the given file. 
+
 
 ## Modules 
 
