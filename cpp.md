@@ -154,6 +154,79 @@ for (int number : numbers)
 numbers.clear(); 
 ```
 
+### Returning a vector
+
+
+
+With assigning the value to another vector: 
+
+```cpp
+vector<int> returnNumbers() {
+  vector<int> numbers;
+  numbers.push_back(1);
+  numbers.push_back(2);
+
+  return numbers;
+};
+
+int main() {  
+  vector<int> newNumbers = returnNumbers();
+
+  cout << newNumbers[0] << endl;
+  // prints "1"
+  return 0;
+}
+```
+
+
+### Passing a vector to a function 
+
+There are two ways to do so: 
+1. Passing by value
+2. Passing by reference
+
+When passing by value, inside of the recievings function scope, a copy is created: 
+```cpp
+void printFirstNumber(vector<int> numbers) {
+  cout << numbers[0] << endl;
+};
+
+int main() {
+
+  vector<int> numbers;
+
+  numbers.push_back(1);
+  numbers.push_back(2);
+  numbers.push_back(3);
+
+  printFirstNumber(numbers);
+
+  return 0;
+}
+```
+
+When passing by reference, we can mutate the original state: 
+
+```cpp
+void changeFirstNumber(vector<int> &numbers) {
+  numbers[0] = 2;
+};
+
+int main() {
+  // vector<int> numbers;
+  vector<int> numbers;
+  numbers.push_back(1);
+
+  changeFirstNumber(numbers);
+
+  cout << numbers[0] << endl;
+  // prints "2" 
+
+  return 0;
+}
+```
+
+
 ## Stack, Heap and Static Memory
 
 ### Allocating variables in the memory
