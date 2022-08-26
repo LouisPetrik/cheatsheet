@@ -83,6 +83,36 @@ int* example = new int[5];
 
 For arrays on the heap you can't retrieve the size via a function. You need to keep track of it yourself. 
 
+### Returning an array from a function
+
+```cpp
+int *returnArr() {
+  int coordinates[2] = {1, 2};
+  return coordinates;
+}
+
+int main()
+{
+  int x = returnArr()[0];
+}
+```
+
+### Passing an array as a parameter
+Its as simple as that. 
+
+```cpp
+void doubleNumbers(int numbers[3]) {
+  for (int i = 0; i < 3; i++) {
+    cout << numbers[i] * 2 << endl;
+  }
+}
+
+int main() {
+  int numbers[3] = {1, 2, 3};
+  doubleNumbers(numbers);
+  return 0;
+}
+```
 
 ## Dynamic arrays (std::vector)
 std::vector are usually not called vectors, often array links or dynamic arrays. 
