@@ -232,6 +232,29 @@ int main() {
 }
 ```
 
+### Vector of arrays 
+
+A vector, as a not-fixed structure in size can hold multiple arrays and therefore act as an flexible two-dimensional array alternative.
+
+
+```cpp
+
+```
+
+### Loop over a vector
+
+```cpp
+vector<int> numbers;
+
+numbers.push_back(1);
+numbers.push_back(2);
+numbers.push_back(3);
+
+for (int number : numbers) {
+  cout << number << endl;
+}
+```
+
 
 ## Stack, Heap and Static Memory
 
@@ -425,3 +448,25 @@ int main(int argc, const char * argv[]) {
 
 ### Creating objects 
 
+
+## Structures 
+
+Through structures, multiple values can be grouped together. 
+
+```cpp
+struct {
+  vector<int> numbers;
+  vector<char> characters;
+} myStruct;
+
+int main() {
+  myStruct.numbers.push_back(1);
+  myStruct.numbers.push_back(2);
+  myStruct.numbers.push_back(3);
+
+  for (int num : myStruct.numbers) {
+    cout << num << endl;
+  }
+  return 0;
+}
+```
