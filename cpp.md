@@ -156,7 +156,13 @@ numbers.clear();
 
 ### Returning a vector
 
+```cpp
+vector<int> returnVector() {
+  vector<int> values;
 
+  return values;
+}
+```
 
 With assigning the value to another vector: 
 
