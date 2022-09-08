@@ -3,20 +3,103 @@
 ## Overview
 
 - ### [Variables and Data Types]
+- ### [Functions]
+- ### [String]
 - ### [Arrays]
 - ### [Dynamic arrays (std::vector)]
 - ### [Stack, Heap and Static Memory]
+- ### [Static]
 - ### [Pointers]
 - ### [References]
 - ### [new-keyword]
 - ### [Classes]
 - ### [Structs]
+- ### [Interfaces]
+- ### [auto-keyword]
+
+
 
 
 
 
 
 ## Variables and Data Types
+
+## Functions
+
+Terminology: 
+The following is a function declaration, which is usually stored in a header file: 
+
+```cpp 
+int add(int a, int b); 
+```
+Then, we usually define them in an actual C++ file: 
+```cpp
+int add(int a, int b) {
+  return a + b; 
+}
+```
+
+### Virtual functions
+
+B is a subclass of A, and A holds a virtual function. Therefore, we can override it in the B file, resulting in a method, which is able to do something else. 
+Code coming soon. 
+
+
+### Function pointers 
+
+Function pointers help, to assign functions to variables. They also help, to pass functions to other functions, for example. 
+
+
+```cpp 
+void PrintValue(int value) {
+  cout << "Value: " << value << endl;
+}
+
+void ForEach(const vector<int> &values, void (*func)(int)) {
+  for (int value : values) {
+    func(value);
+  }
+}
+
+int main() {
+  vector<int> values = {1, 2, 3, 4, 5};
+  ForEach(values, PrintValue);
+  return 0;
+}
+```
+In the example, the PrintValue function is passed into the ForEach function, so it can be used there in another way. 
+
+### Lambdas 
+
+Lambdas could be viewed as throw-away functions, which help to receive the advantages of a function without the physical presence of a normal function. 
+Whenever we have a function pointer, we can use a lambda. 
+
+A simple lambda, saved to a variable, just like in JavaScript: 
+
+```cpp
+auto lambda = []() { cout << "Hello world" << endl; };
+lambda(); 
+```
+Special about this definition is, that outside variables cannot be used inside it. To solve this, we can specify everything in the brackets. 
+Putting in a "=" means, we want to make everything available inside the function. 
+
+This way, we make the variable available inside it: 
+```cpp
+int a = 5; 
+
+auto lambda = [a]() { cout << "Hello world" << endl; };
+lambda(); 
+```
+
+There are many other ways to specify, you can check them out in a C++ reference. 
+
+
+## Strings
+
+Often, using Strings is avoided for performance gains. 
+As an high-performance alternative for using strings, C++ offers Small Strings, which will not allocate memory on the heap. 
+
 
 
 ## Arrays
@@ -315,6 +398,18 @@ free(p);
 ```
 
 
+## Static
+The static keyword before a variable defines its visibility. 
+
+```cpp
+static int num = 10; 
+```
+
+When using static outside of a class or a struct, it means that the variable is only visible to all other parts of the translation unit. When using it in a class or struct, it means the variable is only visible with
+the structure. 
+
+Having the same global variables in two different files leads to an error. Using the static keyword on one of the variables, the error is resolved, as they are no longer conflicting in the same scope. 
+
 ## Pointers 
 
 A pointer is an integer, which stores a memory address. Types can be used with pointers but more on a syntactical-level to make clear what the value retrieved will be. 
@@ -445,9 +540,107 @@ int main(int argc, const char * argv[]) {
 }
 ```
 
+We can call functions from classes, once we create an instance of it: 
+
+```cpp
+class Person {
+  public:
+    string getName() {
+      return "Max";
+    }
+};
+
+int main() {
+  Person max;
+  cout << max.getName() << endl;
+  return 0;
+}
+```
+
+### Static methods 
+
+```cpp
+class Person {
+  public:
+    static void greet(string name) {
+      cout << "Hello, " << name << endl;
+    }
+};
+
+int main() {  
+  Person::greet("Max");
+
+  return 0;
+}
+```
+
+Instead of writing <name-of-instance>.greet() we now address the name of the class, and call the function directly. Therefore, we no longer need 
+an instance to call this function.  
+The same works for variables inside the class. 
 
 ### Creating objects 
 
+
+
+### The constructor 
+
+The constructor is run when the object is created. By default, there is always a constructor, but the default one does nothing. 
+Let's create a custom constructor: 
+
+```cpp
+class Person {
+  public:
+    Person() {
+      cout << "Person object is created" << endl;
+    }
+};
+// ......
+Person max; 
+```
+
+Making the class static-only and not allowing creating instances: 
+```cpp
+class Log {
+  private:
+    Log();
+  public:
+    static void greet() {
+      cout << "hello" << endl;
+    }
+};
+```
+
+Now, trying to create an instance of this class will always lead to an error. 
+
+### The destructor
+
+The destructor is create like the constructor, just with a "~" before the name. In this example, as the function creates the instance, once the function 
+is done and removed from the stack, the object is deleted. 
+
+```cpp
+class Log {
+  public:
+    ~Log() {
+      cout << "Object will be deleted" << endl;
+    }
+};
+
+void createObject() {
+  Log logger;
+}
+
+int main() {
+  createObject()
+
+  return 0;
+}
+```
+
+Calling the destructor manually is possible, but not recommended and very rare: 
+```cpp
+logger.~Log(); 
+
+```
 
 ## Structures 
 
@@ -492,4 +685,36 @@ int main() {
   }
   return 0;
 }
+```
+
+## Interfaces
+
+
+## auto Keyword
+The auto keyword helps us to deduce the typ of a variable. Normally, we provide the type of every variable and function to it. 
+
+```cpp
+int a = 5;  
+auto b = a;
+
+// or: 
+auto c = 5; 
+```
+
+Mostly, the auto keyword is a danger, as it hides to 
+According to the Cherno on YouTube, for-loops are a great case for the auto-keyword: 
+
+```cpp
+vector<string> strings;
+strings.push_back("apple");
+strings.push_back("orange");
+  
+for (auto it = strings.begin(); it != strings.end(); it++) {
+  cout << *it << endl;
+}
+```
+
+The auto keyword makes the whole code much more readable, compared to writing out the whole type like this: 
+```cpp
+for (vector<string>::iterator ....)
 ```
