@@ -40,6 +40,23 @@ int add(int a, int b) {
 }
 ```
 
+
+### Passing Functions as parameters 
+
+```cpp
+int add (int a, int b) {
+  return a + b; 
+}
+
+int useFunction(int a, int b, function<int(int, int)> func) {
+  return func(a, b); 
+}
+
+int main() {
+  cout << useFunction(2, 3, &add) << endl; 
+}
+```
+
 ### Virtual functions
 
 B is a subclass of A, and A holds a virtual function. Therefore, we can override it in the B file, resulting in a method, which is able to do something else. 
