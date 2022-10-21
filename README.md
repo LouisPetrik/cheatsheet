@@ -12,7 +12,29 @@ There are cheat sheets available on:
 - [AssemblyScript](https://github.com/LouisPetrik/cheatsheet/blob/master/assemblyscript.md)
 
 
-For a similar but more complete offer, check out [codingcheats.io](https://codingcheats.io/)
+This repo serves for quickly jotting down learnings, therefore check out [codingcheats.io](https://codingcheats.io/)
+for a more complete version. 
+
+
+# Full Table of Contents
+
+
+## C++ 
+
+- [Variables and Data Types](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#variables-and-data-types-1)
+- [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#functions-1)
+- [String](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#strings)
+- [Arrays](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#arrays-1)
+- [Dynamic arrays (vectors)](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#dynamic-arrays-stdvector-1)
+- [Stack, Heap and Static Memory](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#stack-heap-and-static-memory-1)
+- [Static](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#static-1)
+- [Pointers](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#pointers-1)
+- [References](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#references-1)
+- [new-keyword](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#new-keyword-1)
+- [Classes](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#classes-1)
+- [Structs](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#structures)
+- [Interfaces](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#interfaces-1)
+- [auto-keyword](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#interfaces-1)
 
 ## Go
 
@@ -55,3 +77,9 @@ For a similar but more complete offer, check out [codingcheats.io](https://codin
 - [Lists](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#lists)
 - [Typeclasses](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#typeclasses-1)
 - [Interaction with JavaScript](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#interaction-with-javascript-1)
+
+
+# Todos 
+
+- Interfaces in C++ 
+- 
