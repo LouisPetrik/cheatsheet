@@ -82,4 +82,6 @@ for a more complete version.
 # Todos 
 
 - Interfaces in C++ 
-- 
+- Filling out AssemblyScript and TypeScript
+- Basics of C 
+- Bun Cheatsheet 
