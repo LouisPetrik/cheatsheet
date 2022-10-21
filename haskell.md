@@ -4,14 +4,13 @@ Disclaimer: As I covered many of the basics of PureScript, and as PureScript and
 
 ## Overview
 
-- ### [GHCI & Hello World!]()
+- ### [GHCI & Hello World!](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#ghci)
 - ### [Data types](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#data-types-1)
 - ### [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#functions-1)
 - ### [Bindings](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#bindings-1)
 - ### [Lists](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#lists-1)
 - ### [Typeclasses](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#typeclasses-1)
 - ### [In and output](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#in-and-output-1)
-- ### [Monads]
 - ### [Modules](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#modules)
 - ### [Tips & Tricks](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#tips--tricks-1)
 
