@@ -97,7 +97,7 @@ slug: /category/technology-name
 ```
 
 Each of the files has the h1 headings: 
-- Introduction to Technology-name
+- What is technology-name? 
 - Author's Notes (optional)
 - Sources 
 - Additional Ressources 
