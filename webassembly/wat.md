@@ -1,12 +1,3 @@
-# WebAssembly Cheatsheet
-
-Containing everything related and WAT as a language itself. 
-
-# WebAssembly using C++/C with Emscripten 
-
-Installing Emscripten on your machine: 
-
-
 # WebAssembly Text Format (WAT)
 
 WA offers a notation which can be used to write human-readable code, compiled to WASM. 
@@ -104,5 +95,3 @@ Comment ;)
 
 For now, there are integers and floats, defined by the size in memory: 
 i32, i64, f32, f64 
-
-## Data structures 

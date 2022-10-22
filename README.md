@@ -34,15 +34,13 @@ for a more complete version.
 
 
 ## Haskell 
-- [GHCI & Hello World!](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#ghci)
-- [Data types](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#data-types-1)
-- [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#functions-1)
-- [Bindings](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#bindings-1)
-- [Lists](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#lists-1)
-- [Typeclasses](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#typeclasses-1)
-- [In and output](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#in-and-output-1)
-- [Modules](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#modules)
-- [Tips & Tricks](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md#tips--tricks-1)
+- [GHCI & Hello World!](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell/ghci.md)
+- [Data types](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell/data-types.md)
+- [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell/functions.md)
+- [Bindings](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell/bindings.md)
+- [Lists](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell/lists.md)
+- [Typeclasses](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell/typeclasses.md)
+- [In and output](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell/IO.md)
 
 
 ## PureScript 
@@ -62,6 +60,10 @@ for a more complete version.
 - [Lists](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/lists.md)
 - [Typeclasses](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/typeclasses.md)
 - [Interaction with JavaScript](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/js-interaction.md)
+
+
+## WebAssembly 
+- [Text Format](https://github.com/LouisPetrik/cheatsheet/blob/master/webassembly/wat.md)
 
 
 # Todos 
