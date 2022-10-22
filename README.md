@@ -1,4 +1,9 @@
+# DEPRECATED 
+Check out https://github.com/LouisPetrik/codehints instead. 
+
+
 # My Programming Cheatsheets 
+
 
 This repo is a collection of cheatsheets on different programming languages. 
 This repo serves for quickly jotting down learnings, therefore check out [codingcheats.io](https://codingcheats.io/)
