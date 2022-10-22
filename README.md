@@ -1,17 +1,6 @@
 # My Programming Cheatsheets 
 
 This repo is a collection of cheatsheets on different programming languages. 
-There are cheat sheets available on: 
-
-- [Go](https://github.com/LouisPetrik/cheatsheet/blob/master/go.md)
-- [Haskell](https://github.com/LouisPetrik/cheatsheet/blob/master/haskell.md)
-- [PureScript](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md)
-- [C++](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md)
-- [C](https://github.com/LouisPetrik/cheatsheet/blob/master/c.md)
-- [TypeScript](https://github.com/LouisPetrik/cheatsheet/blob/master/typescript.md)
-- [AssemblyScript](https://github.com/LouisPetrik/cheatsheet/blob/master/assemblyscript.md)
-
-
 This repo serves for quickly jotting down learnings, therefore check out [codingcheats.io](https://codingcheats.io/)
 for a more complete version. 
 
@@ -38,12 +27,13 @@ for a more complete version.
 
 ## Go
 
--  [Hello World](https://github.com/LouisPetrik/cheatsheet/blob/master/go.md#hello-world)
--  [Variables](https://github.com/LouisPetrik/cheatsheet/blob/master/go.md#variables)
--  [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/go.md#functions)
--  [For-Loop](https://github.com/LouisPetrik/cheatsheet/blob/master/go.md#for-loops)
--  [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/go.md#conditionals)
--  [Concurrency](https://github.com/LouisPetrik/cheatsheet/blob/master/go.md#concurrency)
+-  [Hello World](https://github.com/LouisPetrik/cheatsheet/blob/master/go/getting-started.md)
+-  [Variables](https://github.com/LouisPetrik/cheatsheet/blob/master/go/variables.md)
+-  [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/go/functions.md)
+-  [For-Loop](https://github.com/LouisPetrik/cheatsheet/blob/master/go/loops.md)
+-  [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/go/conditionals.md)
+-  [Concurrency](https://github.com/LouisPetrik/cheatsheet/blob/master/go/concurrency.md)
+-  [Arrays and Slices](https://github.com/LouisPetrik/cheatsheet/blob/master/go/arrays-slices.md)
 
 
 ## Haskell 
