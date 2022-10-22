@@ -53,7 +53,7 @@ node index.js should log "12" now.
 
 ### Running it in the browser 
 
-All you have to do, is to write the following JavaScript code and use it in the browser, so embed it in your HTML or you the <script src="">. 
+All you have to do, is to write the following JavaScript code and use it in the browser, so embed it in your HTML or you the <script src=""></script>. 
 
 ```javascript
 fetch('add.wasm')

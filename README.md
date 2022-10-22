@@ -65,6 +65,14 @@ for a more complete version.
 ## WebAssembly 
 - [Text Format](https://github.com/LouisPetrik/cheatsheet/blob/master/webassembly/wat.md)
 
+# Contributing 
+
+In case you are interested in contributing, reach out to me. 
+
+## Style guidelines
+
+Please do not use uncloses XML tags anywhere as this will 
+break anything. Thank you. 
 
 # Todos 
 

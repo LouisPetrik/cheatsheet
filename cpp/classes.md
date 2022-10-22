@@ -48,7 +48,7 @@ int main() {
 }
 ```
 
-Instead of writing <name-of-instance>.greet() we now address the name of the class, and call the function directly. Therefore, we no longer need 
+Instead of writing instance.greet() we now address the name of the class, and call the function directly. Therefore, we no longer need 
 an instance to call this function.  
 The same works for variables inside the class. 
 
