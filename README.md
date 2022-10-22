@@ -10,20 +10,16 @@ for a more complete version.
 
 ## C++ 
 
-- [Variables and Data Types](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#variables-and-data-types-1)
-- [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#functions-1)
-- [String](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#strings)
-- [Arrays](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#arrays-1)
-- [Dynamic arrays (vectors)](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#dynamic-arrays-stdvector-1)
-- [Stack, Heap and Static Memory](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#stack-heap-and-static-memory-1)
-- [Static](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#static-1)
-- [Pointers](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#pointers-1)
-- [References](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#references-1)
-- [new-keyword](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#new-keyword-1)
-- [Classes](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#classes-1)
-- [Structs](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#structures)
-- [Interfaces](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#interfaces-1)
-- [auto-keyword](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp.md#interfaces-1)
+- [Variables and Data Types](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp/variables-data-types.md)
+- [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp/functions.md)
+- [Arrays](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp/arrays.md)
+- [Dynamic arrays (vectors)](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp/vectors.md)
+- [Stack, Heap and Static Memory](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp/heap-stack-memory.md)
+- [Pointers](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp/pointers.md)
+- [References](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp/references.md)
+- [Classes](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp/classes.md)
+- [Structs](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp/structures.md)
+
 
 
 ## Go
@@ -50,24 +46,22 @@ for a more complete version.
 
 
 ## PureScript 
-- [Getting started, tools & the REPL](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#getting-started-tools--the-repl-1)
-- [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#functions-1)
-- [Bindings](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#bindings-1)
-- [Custom types](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#custom-types-1)
-- [Using the console](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#using-the-console-1)
-- [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#records-1)
-- [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals-1)
-- [Pattern matching](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#conditionals-1)
-- [Map, Reduce and Filter](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#map-reduce-and-filter-1)
-- [Arrays](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#arrays)
-- [Folds](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#folds)
-- [Sum and Product types](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#sum-and-product-types)
-- [Tuples, sets and others](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#tuples-sets-and-other-types)
-- [Modules](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#modules-1)
-- [Useful default functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#useful-default-functions-1)
-- [Lists](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#lists)
-- [Typeclasses](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#typeclasses-1)
-- [Interaction with JavaScript](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript.md#interaction-with-javascript-1)
+- [Getting started, tools & the REPL](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/getting-started.md)
+- [Types](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/types.md)
+- [Functions](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/functions.md)
+- [Bindings](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/bindings.md)
+- [Custom types](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/custom-types.md)
+- [IO](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/IO.md)
+- [Records](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/records.md)
+- [Conditionals](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/conditionals.md)
+- [Pattern matching](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/patttern-matching.md)
+- [Map, Reduce and Filter](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/map-reduce-filter.md)
+- [Arrays](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/arrays.md)
+- [Folds](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/folds.md)
+- [Standard Library](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/standard-lib.md)
+- [Lists](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/lists.md)
+- [Typeclasses](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/typeclasses.md)
+- [Interaction with JavaScript](https://github.com/LouisPetrik/cheatsheet/blob/master/purescript/js-interaction.md)
 
 
 # Todos 
