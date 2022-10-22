@@ -4,8 +4,13 @@ This repo is a collection of cheatsheets on different programming languages.
 This repo serves for quickly jotting down learnings, therefore check out [codingcheats.io](https://codingcheats.io/)
 for a more complete version. 
 
+# Table of contents 
+- [Introduction](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp/variables-data-types.md)
+- [Table of Contents for the Cheatsheets](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp/variables-data-types.md)
+- [Contributing](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp/variables-data-types.md)
+- [Todos](https://github.com/LouisPetrik/cheatsheet/blob/master/cpp/variables-data-types.md)
 
-# Full Table of Contents
+# Cheatsheets Table of Contents 
 
 
 ## C++ 
@@ -79,6 +84,23 @@ Make sure each file at leasts holds a minimal header with a title:
 ---
 title: The title
 ---
+
+Each technology has one intro.md in its directory. This file always has 
+a header like this: 
+
+```markdown 
+--- 
+title: Introduction to Technology-name 
+sidebar_position: 1
+slug: /category/technology-name
+--- 
+```
+
+Each of the files has the h1 headings: 
+- Introduction to Technology-name
+- Author's Notes (optional)
+- Sources 
+- Additional Ressources 
 
 Please do not use uncloses XML tags anywhere as this will 
 break anything. Thank you.

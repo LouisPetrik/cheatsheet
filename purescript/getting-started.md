@@ -69,12 +69,3 @@ Whenever you change something in the file, make sure to reload the REPL:
 To quit: ":quit".
 
 Getting the type of some data: ":type data"
-
-## Great ressources for PureScript
-
--  [The official PureScript book](https://book.purescript.org/)
--  [Jordan's notes](https://jordanmartinez.github.io/purescript-jordans-reference-site/Preface.html)
--  [Pursuit](https://pursuit.purescript.org/)
--  [Functional Programming Made Easier - Book. There is a free sample which is awesome](https://leanpub.com/fp-made-easier) 
-
-The FP made easier book also serves as the original source of knowledge for this cheatsheet. 
