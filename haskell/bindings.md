@@ -1,3 +1,11 @@
+---
+title: Bindings in Haskell 
+description: Understand bindings like let, where and others in Haskell with cheatsheets. 
+---
+<head>
+  <title>Bindings in Haskell</title>
+</head>
+
 # Bindings 
 
 Bindings can be seen as a replacement for constants in the scope of functions. They don't enable us to do something completely new, but help to make things more clearly, as we can store the result of some expression through a binding. 

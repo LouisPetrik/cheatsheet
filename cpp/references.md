@@ -1,3 +1,7 @@
+---
+title: References in C++
+---
+
 # References 
 
 References are related to pointers - one needs to understand the first one. They work similary like pointers. 

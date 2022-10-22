@@ -1,4 +1,8 @@
-## Dynamic arrays (std::vector)
+---
+title: Vectors in C++
+---
+
+# Vectors (dynamic Arrays)
 std::vector are usually not called vectors, often array links or dynamic arrays. 
 Usually, you do not to provide a length to the vector - you can add elements and it will resize under the hood, 
 as inside of the container a new array is created on each resize. 

@@ -1,3 +1,7 @@
+---
+title: Variables and Data Types in C++
+---
+
 # Variables & Data types
 
 ## Strings

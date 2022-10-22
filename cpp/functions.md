@@ -1,3 +1,7 @@
+---
+title: Functions in C++
+---
+
 # Functions
 
 Terminology: 

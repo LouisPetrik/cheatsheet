@@ -1,3 +1,7 @@
+---
+title: Structures in C++
+---
+
 # Structures 
 
 Through structures, multiple values can be grouped together. 

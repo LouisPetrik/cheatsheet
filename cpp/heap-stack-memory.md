@@ -1,3 +1,7 @@
+---
+title: Stack, Heap and Static Memory in C++
+---
+
 # Stack, Heap and Static Memory
 
 ## Allocating variables in the memory

@@ -1,3 +1,7 @@
+---
+title: Classes in C++
+---
+
 # Classes
 By default, all properties of a class are kept private, therefore not visble outside of the scope. 
 

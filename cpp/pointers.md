@@ -1,3 +1,7 @@
+---
+title: Pointers in C++
+---
+
 # Pointers 
 
 A pointer is an integer, which stores a memory address. Types can be used with pointers but more on a syntactical-level to make clear what the value retrieved will be. 

@@ -71,8 +71,19 @@ In case you are interested in contributing, reach out to me.
 
 ## Style guidelines
 
+Each Markdown file has a header section on top which will be rendered to <head></head>. 
+Therefore it holds the title, the description etc. 
+
+Make sure each file at leasts holds a minimal header with a title: 
+```markdown
+---
+title: The title
+---
+
 Please do not use uncloses XML tags anywhere as this will 
-break anything. Thank you. 
+break anything. Thank you.
+
+
 
 # Todos 
 
