@@ -1,3 +1,8 @@
+---
+title: Typeclasses in Haskell 
+---
+
+
 # Typeclasses 
 
 ```haskell 

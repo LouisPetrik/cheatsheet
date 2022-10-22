@@ -1,3 +1,7 @@
+---
+title: Loops in Go 
+---
+
 # For Loops
 
 For-Loops are the only loops which can be used in Go.

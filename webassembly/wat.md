@@ -1,3 +1,7 @@
+---
+title: The WebAssembly Text Format 
+---
+
 # WebAssembly Text Format (WAT)
 
 WA offers a notation which can be used to write human-readable code, compiled to WASM. 

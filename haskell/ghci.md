@@ -1,3 +1,7 @@
+---
+title: Using the Glasgow Haskell Compiler 
+---
+
 # GHCI
 
 The Glasgow Haskell compiler 

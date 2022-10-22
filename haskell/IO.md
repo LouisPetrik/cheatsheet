@@ -1,3 +1,7 @@
+---
+title: Input and Output in Haskell 
+---
+
 # In and output 
 
 When initialising records for example, you might have noticed that you are unable to print

@@ -1,3 +1,7 @@
+---
+title: Data Types in Haskell 
+----
+
 # Data types 
 
 ## Int & Integer 

@@ -1,10 +1,6 @@
 ---
 title: Bindings in Haskell 
-description: Understand bindings like let, where and others in Haskell with cheatsheets. 
 ---
-<head>
-  <title>Bindings in Haskell</title>
-</head>
 
 # Bindings 
 
